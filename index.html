@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediPlanner - Doctor Appointment Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Patient Information and Appointment Booking</h2>
+    <form id="patientForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      
+      <label for="age">Age (0-100):</label>
+      <input type="number" id="age" min="0" max="100" required>
+      
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required>
+      
+      <label for="disease">Disease:</label>
+      <select id="disease" required></select>
+      
+      <button type="button" onclick="findDoctors()">Submit</button>
+    </form>
+    
+    <div id="doctorList" class="doctor-list hidden">
+      <h3>Available Doctors</h3>
+      <ul id="doctors"></ul>
+      <p id="noDoctors" class="hidden">
+        No doctors available. Suggested medicines: <span id="medicines"></span>
+      </p>
+    </div>
+    
+    <div id="appointmentForm" class="appointment-form hidden">
+      <h3>Book Appointment</h3>
+      <form id="bookingForm">
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" required></select>
+        
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" required>
+        
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" required>
+        
+        <button type="button" onclick="bookAppointment()">Book Appointment</button>
+      </form>
+    </div>
+    
+    <div id="confirmation" class="confirmation hidden">
+      <h3>Appointment Confirmation</h3>
+      <p id="confirmationDetails"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
